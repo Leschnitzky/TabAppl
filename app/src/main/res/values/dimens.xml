@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rec_item_not_collapsed">40dp</dimen>
+</resources>
