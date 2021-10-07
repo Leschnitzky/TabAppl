@@ -5,10 +5,11 @@
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/TaboolaExam/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TaboolaExam/app/src/main/res/layout/first_task_recycler_view_item.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/layout/first_task_recycler_view_item.xml" value="0.3134057971014493" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

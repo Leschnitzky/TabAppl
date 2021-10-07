@@ -1,5 +1,8 @@
 package com.example.taboolaexam.model;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Arcticle {
     private String title;
     private String imageURL;
@@ -10,6 +13,13 @@ public class Arcticle {
         this.title = title;
         this.imageURL = imageURL;
         this.description = description;
+    }
+
+
+    public Arcticle(){
+        this.title = "EMPTY";
+        this.imageURL = "EMPTY";
+        this.description = "EMPTY";
     }
 
     public String getTitle() {
@@ -34,5 +44,19 @@ public class Arcticle {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public static Arcticle fromJSONObject(JSONObject object) throws JSONException {
+        return new Arcticle(
+                object.getString("name"),
+                object.getString("thumbnail"),
+                object.getString("description"));
+    }
+
+    @Override
+    public String toString() {
+        return "Arcticle{" +
+                "title='" + title + '\'' +
+                '}';
     }
 }
