@@ -88,6 +88,7 @@ public class FirstTaskRecyclerViewAdapter extends RecyclerView.Adapter<
                 widget.setMode(Constants.MODE_ID_WIDGET)
                         .setPlacement(Constants.PLACEMENT_ID_WIDGET);
                 widget.setAutoResizeHeight(true);
+
             }
             widget.fetchContent();
         }
@@ -101,6 +102,7 @@ public class FirstTaskRecyclerViewAdapter extends RecyclerView.Adapter<
             super(binding.getRoot());
             this.binding = binding;
             this.shouldChangeBackground = shouldChangeColor;
+
         }
 
         public void bind(Arcticle arcticle, Context context) {
@@ -135,6 +137,7 @@ public class FirstTaskRecyclerViewAdapter extends RecyclerView.Adapter<
                         (FirstTaskRecyclerViewItemBinding.inflate(
                                 activity.getLayoutInflater()
                         ), shouldChangeBackgroundColor);
+
             case VIEW_TYPE_TABOOLA:
                 TaboolaWidget tbWidget = (TaboolaWidget) LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.second_task_taboola_widget_item, parent, false);
@@ -147,6 +150,7 @@ public class FirstTaskRecyclerViewAdapter extends RecyclerView.Adapter<
                 TaboolaWidget tbFeedWidget = (TaboolaWidget) LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.second_task_taboola_widget_item, parent, false);
                 return new SecondTaskTaboolaViewHolder(
+
                     tbFeedWidget,
                         activity,
                         true
