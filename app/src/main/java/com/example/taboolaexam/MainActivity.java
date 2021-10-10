@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.taboolaexam.databinding.ActivityMainBinding;
 import com.example.taboolaexam.model.Arcticle;
@@ -23,19 +24,35 @@ import com.taboola.android.TaboolaWidget;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private FirstTaskViewModel viewModel;
     private TaboolaWidget widget;
-    private FirstTaskRecyclerViewAdapter adapter;
+    private static FirstTaskRecyclerViewAdapter adapter;
 
+    public static FirstTaskRecyclerViewAdapter getRecyclerViewAdapter(){
+        if(adapter == null){
+            return null;
+        } else {
+            return adapter;
+        }
+    }
     final Observer<List<Arcticle >> listObserver = new Observer<List<Arcticle >>() {
         @Override
         public void onChanged(List<Arcticle> arcticles) {
-            adapter.setRecyclerDataSet(arcticles);
-            adapter.notifyDataSetChanged();
+            if(arcticles == null){
+                //Error problem
+                Toast.makeText(getApplicationContext(),
+                        "There was a problem displaying the data, please make sure you are connected to the internet",
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                adapter.setRecyclerDataSet(arcticles);
+                adapter.notifyDataSetChanged();
+            }
         }
     };
 
@@ -94,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getInitialData() {
-        viewModel.getArcticleData();
+        viewModel.getArcticleData(Executors.newSingleThreadExecutor());
     }
 
 

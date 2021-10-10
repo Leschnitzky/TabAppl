@@ -29,6 +29,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -56,6 +59,8 @@ dependencies {
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
 
 
-    // Mockito
+    // Testing
     dependencies { testImplementation "org.mockito:mockito-core:3.12.4" }
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation 'org.json:json:20140107'
 }

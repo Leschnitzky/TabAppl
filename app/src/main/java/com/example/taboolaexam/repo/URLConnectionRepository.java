@@ -24,14 +24,15 @@ public class URLConnectionRepository {
         try {
             String responseString = getResponseStringFromServer();
             return parseArcticles(responseString);
-        } catch (IOException | JSONException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-        } finally {
+        } catch (JSONException e){
+        }finally {
             if(urlConnection != null){
                 urlConnection.disconnect();
             }
         }
-        return new ArrayList<>();
+        return null;
     }
 
     private List<Arcticle> parseArcticles(String responseString) throws JSONException {

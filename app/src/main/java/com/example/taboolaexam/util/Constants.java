@@ -13,6 +13,9 @@ public class Constants {
     public static final String PUBLISHER_ID= "sdk-tester";
     public static final String MODE_ID_WIDGET = "alternating-widget-without-video";
     public static final String PLACEMENT_ID_WIDGET = "Below Article";
+
+    public static final String MODE_ID_FEED = "thumbs-feed-01";
+    public static final String PLACEMENT_ID_FEED = "Feed without video";
     public static final String TYPE_WIDGET= "article";
     public static final String TARGET_WIDGET="mix";
     public static String URL_STRING = "https://s3-us-west-2.amazonaws.com/taboola-mobile-sdk/public/home_assignment/data.json";

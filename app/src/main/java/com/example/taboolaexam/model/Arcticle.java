@@ -47,16 +47,27 @@ public class Arcticle {
     }
 
     public static Arcticle fromJSONObject(JSONObject object) throws JSONException {
-        return new Arcticle(
-                object.getString("name"),
-                object.getString("thumbnail"),
-                object.getString("description"));
+        String name = object.getString("name");
+        String thumbnail = object.getString("thumbnail");
+        String description = object.getString("description");
+
+        if(name == null || thumbnail == null || description == null){
+            return new Arcticle();
+        } else {
+            return new Arcticle(
+                    object.getString("name"),
+                    object.getString("thumbnail"),
+                    object.getString("description"));
+        }
+
     }
 
     @Override
     public String toString() {
         return "Arcticle{" +
                 "title='" + title + '\'' +
+                ", imageURL='" + imageURL + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

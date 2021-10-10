@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/TaboolaExam/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/TaboolaExam/app/src/main/res/layout/first_task_recycler_view_item.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17083333333333334" />
         <entry key="app/src/main/res/layout/first_task_recycler_view_item.xml" value="0.3134057971014493" />
+        <entry key="app/src/main/res/layout/second_task_taboola_widget_item.xml" value="0.21041666666666667" />
       </map>
     </option>
   </component>
