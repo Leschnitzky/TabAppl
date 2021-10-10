@@ -103,6 +103,7 @@ public class FirstTaskRecyclerViewAdapter extends RecyclerView.Adapter<
             this.binding = binding;
             this.shouldChangeBackground = shouldChangeColor;
 
+
         }
 
         public void bind(Arcticle arcticle, Context context) {
@@ -137,6 +138,7 @@ public class FirstTaskRecyclerViewAdapter extends RecyclerView.Adapter<
                         (FirstTaskRecyclerViewItemBinding.inflate(
                                 activity.getLayoutInflater()
                         ), shouldChangeBackgroundColor);
+
 
             case VIEW_TYPE_TABOOLA:
                 TaboolaWidget tbWidget = (TaboolaWidget) LayoutInflater.from(parent.getContext())
