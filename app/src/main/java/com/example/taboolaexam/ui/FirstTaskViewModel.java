@@ -19,6 +19,9 @@ public class FirstTaskViewModel extends ViewModel {
 
     private MutableLiveData<List<Arcticle> > arcticleList;
 
+    public FirstTaskViewModel(URLConnectionRepository urlRepository){
+        repository = urlRepository;
+    }
 
     public LiveData<List<Arcticle>> getListLiveData() {
         if (arcticleList == null) {

@@ -1,8 +1,11 @@
 package com.example.taboolaexam;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
@@ -10,6 +13,7 @@ import android.view.View;
 
 import com.example.taboolaexam.databinding.ActivityMainBinding;
 import com.example.taboolaexam.model.Arcticle;
+import com.example.taboolaexam.repo.URLConnectionRepository;
 import com.example.taboolaexam.ui.FirstTaskRecyclerViewAdapter;
 import com.example.taboolaexam.ui.FirstTaskViewModel;
 import com.example.taboolaexam.util.Constants;
@@ -39,14 +43,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        viewModel = new ViewModelProvider(this).get(FirstTaskViewModel.class);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         View rootView = binding.getRoot();
+        initViewModel();
+
         setContentView(rootView);
         initTaboolaWidget();
         setupUI();
+    }
+
+    private void initViewModel() {
+        ViewModelProvider.Factory factory = new ViewModelProvider.Factory() {
+            @NonNull
+            @Override
+            public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
+                return (T) new FirstTaskViewModel(
+                        new URLConnectionRepository()
+                );
+            }
+
+        };
+
+        viewModel = ViewModelProviders.of(this,factory).get(FirstTaskViewModel.class);
     }
 
     private void initTaboolaWidget() {
